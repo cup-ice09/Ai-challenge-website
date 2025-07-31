@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Challenge Payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Payment Card Header -->
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex items-center space-x-3">
+                <input type="radio" checked class="w-4 h-4 text-purple-600" name="payment-option">
+                <div>
+                    <h3 class="font-semibold text-gray-900">AI Challenge</h3>
+                    <p class="text-lg font-bold text-gray-900">₹17,700</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Amount Details -->
+        <div class="p-6 space-y-4">
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">Amount</span>
+                <span class="font-bold text-gray-900">₹17,700</span>
+            </div>
+
+            <!-- Book Now Button -->
+            <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-bold hover:bg-purple-700 transition duration-200">
+                Book Now
+            </button>
+
+            <!-- Powered by Section -->
+            <div class="text-center text-sm text-gray-500">
+                Powered by Instamojo
+            </div>
+
+            <!-- Share Section -->
+            <div class="flex items-center justify-center space-x-2 text-sm text-purple-600 hover:text-purple-700 cursor-pointer">
+                <i class="fas fa-share-alt"></i>
+                <span>Share this page</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click handler for share functionality
+        document.querySelector('.cursor-pointer').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'AI Challenge Payment',
+                    text: 'Join the AI Challenge Program',
+                    url: window.location.href
+                })
+                .catch(console.error);
+            }
+        });
+    </script>
+</body>
+</html>

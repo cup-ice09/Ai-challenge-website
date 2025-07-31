@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Program in Artificial Intelligence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.addEventListener('load', function() {
+            try {
+                // Tailwind configuration
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                gold: '#FFD700',
+                            },
+                            animation: {
+                                'float': 'float 3s ease-in-out infinite',
+                            },
+                            keyframes: {
+                                float: {
+                                    '0%, 100%': { transform: 'translateY(0)' },
+                                    '50%': { transform: 'translateY(-10px)' },
+                                }
+                            }
+                        }
+                    }
+                };
+
+                // Initialize Intersection Observer
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+            } catch (error) {
+                console.error('Error initializing:', error);
+            }
+        });
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(45deg, #000000, #FFD700);
+        }
+        .tech-circle {
+            animation: float 6s ease-in-out infinite;
+            transform-origin: center;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(5deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(15px) rotate(-5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .tech-circle:nth-child(2) {
+            animation-delay: -2s;
+        }
+        .tech-circle:nth-child(3) {
+            animation-delay: -4s;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 gradient-bg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-white">AI CHALLENGE</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-white hover:text-gold transition">About</a>
+                    <a href="#challenge" class="text-white hover:text-gold transition">Challenge</a>
+                    <a href="#join" class="bg-gold text-black px-6 py-2 rounded-full hover:bg-white transition">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">MASTER PROGRAM IN ARTIFICIAL INTELLIGENCE</h1>
+                    <p class="text-xl mb-8">Turn Intelligence Into Impact – Master the Power of AI.</p>
+                    <div class="flex space-x-4">
+                        <a href="#join" class="bg-gold text-black px-8 py-3 rounded-full hover:bg-white transition">JOIN US</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="tech-circle bg-gold/20 rounded-full p-4">
+                            <img src="image1.png" alt="AI Robot 1" class="rounded-full">
+                        </div>
+                        <div class="tech-circle bg-gold/20 rounded-full p-4 mt-8">
+                            <img src="image2.png" alt="AI Robot 2" class="rounded-full">
+                        </div>
+                        <div class="tech-circle bg-gold/20 rounded-full p-4">
+                            <img src="image3.png" alt="AI Robot 3" class="rounded-full">
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute inset-0 -z-10">
+                        <div class="absolute top-0 left-0 w-20 h-20 border border-gold/30 rounded-full"></div>
+                        <div class="absolute bottom-0 right-0 w-32 h-32 border border-gold/30 rounded-full"></div>
+                        <div class="absolute top-1/2 left-1/2 w-16 h-16 border border-gold/30 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-gradient-1 {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            position: relative;
+            z-index: 1;
+        }
+        .section-gradient-2 {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            position: relative;
+            z-index: 1;
+        }
+        section {
+            position: relative;
+            z-index: 1;
+            background-color: #000000;
+        }
+    </style>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        });
+    </script>
+
+    <!-- Challenge Section -->
+    <section id="challenge" class="py-20 section-gradient-1 relative z-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">AI CHALLENGE: Master AI & Code Your Future</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Who Is It For? -->
+                <div class="bg-black/30 p-6 rounded-xl fade-in hover:bg-black/40 transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-gold">Who Is It For?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fas fa-user-graduate text-gold mr-3 text-xl"></i>Beginners/intermediate devs</li>
+                        <li class="flex items-center"><i class="fas fa-chart-line text-gold mr-3 text-xl"></i>Data professionals</li>
+                        <li class="flex items-center"><i class="fas fa-briefcase text-gold mr-3 text-xl"></i>Business owners</li>
+                    </ul>
+                </div>
+    
+                <!-- What You'll Master -->
+                <div class="bg-black/30 p-6 rounded-xl fade-in hover:bg-black/40 transition-all duration-300" style="animation-delay: 0.2s">
+                    <h3 class="text-2xl font-bold mb-4 text-gold">What You'll Master</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fas fa-robot text-gold mr-3 text-xl"></i>Generative AI & LLMs</li>
+                        <li class="flex items-center"><i class="fas fa-brain text-gold mr-3 text-xl"></i>AI Agents</li>
+                        <li class="flex items-center"><i class="fas fa-keyboard text-gold mr-3 text-xl"></i>Prompt Engineering</li>
+                        <li class="flex items-center"><i class="fas fa-cogs text-gold mr-3 text-xl"></i>Automation Workflows</li>
+                    </ul>
+                </div>
+    
+                <!-- Assets You Get -->
+                <div class="bg-black/30 p-6 rounded-xl fade-in hover:bg-black/40 transition-all duration-300" style="animation-delay: 0.4s">
+                    <h3 class="text-2xl font-bold mb-4 text-gold">Assets You Get</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fas fa-project-diagram text-gold mr-3 text-xl"></i>30+ projects</li>
+                        <li class="flex items-center"><i class="fas fa-code-branch text-gold mr-3 text-xl"></i>2000+ n8n workflows</li>
+                        <li class="flex items-center"><i class="fas fa-code text-gold mr-3 text-xl"></i>3500+ source codes</li>
+                        <li class="flex items-center"><i class="fas fa-comments text-gold mr-3 text-xl"></i>Daily practice</li>
+                    </ul>
+                </div>
+    
+                <!-- Career Support -->
+                <div class="bg-black/30 p-6 rounded-xl fade-in hover:bg-black/40 transition-all duration-300" style="animation-delay: 0.6s">
+                    <h3 class="text-2xl font-bold mb-4 text-gold">Career Support</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fas fa-certificate text-gold mr-3 text-xl"></i>Microsoft badge prep</li>
+                        <li class="flex items-center"><i class="fas fa-laptop-code text-gold mr-3 text-xl"></i>LeetCode practice</li>
+                        <li class="flex items-center"><i class="fas fa-users text-gold mr-3 text-xl"></i>Lifetime community</li>
+                        <li class="flex items-center"><i class="fas fa-rocket text-gold mr-3 text-xl"></i>Startup support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 section-gradient-2 relative z-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 fade-in text-white">ABOUT US</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="text-center fade-in transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.2s">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gold/20 hover:bg-gold/30 transition-all duration-300 border-2 border-gold/30">
+                        <img src="image1.png" alt="Arun Kumar" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gold">Arun Kumar</h3>
+                    <p class="text-white/90">Founder & CEO</p>
+                </div>
+                <div class="text-center fade-in transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.4s">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gold/20 hover:bg-gold/30 transition-all duration-300 border-2 border-gold/30">
+                        <img src="image2.png" alt="Nirmal" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gold">Nirmal</h3>
+                    <p class="text-white/90">Co-Founder</p>
+                </div>
+                <div class="text-center fade-in transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.6s">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gold/20 hover:bg-gold/30 transition-all duration-300 border-2 border-gold/30">
+                        <img src="image3.png" alt="Saikumar ravi" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gold">Saikumar ravi</h3>
+                    <p class="text-white/90">Mentor (AI Challenge)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="join" class="py-20 text-center gradient-bg relative z-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 fade-in text-white">Want to join us?</h2>
+            <p class="text-xl mb-8 fade-in text-white/90" style="animation-delay: 0.2s">Turn Intelligence Into Impact – Master the Power of AI</p>
+            <p class="text-2xl font-bold mb-8 fade-in text-gold" style="animation-delay: 0.4s">Build real-world projects</p>
+            <a href="#" class="inline-block bg-gold text-black px-8 py-3 rounded-full text-lg font-bold hover:bg-white hover:scale-105 transition-all duration-300 fade-in transform" style="animation-delay: 0.6s">Click here to start your journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container mx-auto px-6">
+            <div class="py-12 text-center text-gray-300 text-sm leading-relaxed">
+                <p class="mb-4">Facebook™ branding is not endorsed by or affiliated with this program.</p>
+                <p class="mb-4">Results may vary. Past performance does not guarantee future results.</p>
+                <p class="mb-4">All intellectual property rights are protected.</p>
+                <p class="mb-4">Trading and investing carry risks. Please consult with professionals.</p>
+                <p>All sessions are recorded for quality and training purposes.</p>
+            </div>
+            <div class="py-8 border-t border-gray-800">
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#" class="text-white hover:underline">Terms & Conditions</a>
+                    <a href="#" class="text-white hover:underline">Privacy Policy</a>
+                    <a href="#" class="text-white hover:underline">Refund/Cancellation</a>
+                    <a href="#" class="text-white hover:underline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
